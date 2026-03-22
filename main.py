@@ -1,5 +1,5 @@
 from utils import detect_type
-from templates import linkedin_template, resume_template, general_template
+from prompt_Optimizer.templates import linkedin_template, resume_template, general_template
 
 def enhance_prompt(user_input):
     category = detect_type(user_input)
