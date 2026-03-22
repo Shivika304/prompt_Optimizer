@@ -1,151 +1,183 @@
-from utils import refine_goal
+from prompt_Optimizer.utils import refine_goal
 
-def linkedin_template(user_input):
+def linkedin_template(user_input, tone, length):
     return f"""
 Act as an expert content strategist.
 
-Create a high-quality LinkedIn post (150–300 words) based on the following idea:
+Create a LinkedIn post based on the following:
 
-User Input:
+Topic:
 {user_input}
+
+Tone:
+{tone}
+
+Length:
+{length}
 
 Goal:
 {refine_goal(user_input)}
 
-Instructions:
-- Start with a strong and attention-grabbing hook
-- Maintain a relatable and professional tone
-- Expand the idea with meaningful insights or real-life relevance
-- Ensure the content is suitable for a broad audience
-- Keep the structure clear and engaging
-- End with a thought-provoking question or call-to-action
-
-Output Format:
-- Well-structured paragraphs
-- Clear flow of ideas
+Guidelines:
+- Start with an engaging hook
+- Maintain a natural and relatable flow
+- Add meaningful insights or perspective
+- Keep it clear and impactful
+- End with a thought-provoking question or CTA
 """
 
-def resume_template(user_input):
+def resume_template(user_input, tone, length):
     return f"""
 Act as an expert resume writer.
 
-Transform the following input into a strong, ATS-friendly resume bullet point:
+Improve the following into a strong resume bullet point:
 
-User Input:
+Input:
 {user_input}
+
+Tone:
+Professional
+
+Length:
+Concise
 
 Goal:
 {refine_goal(user_input)}
 
-Instructions:
-- Use strong action verbs (e.g., Developed, Implemented, Designed)
-- Highlight key skills and technologies
-- Add measurable impact if possible
-- Keep it concise and results-oriented
-- Ensure clarity and professionalism
-
-Output Format:
-- 1–2 impactful bullet points
+Guidelines:
+- Use strong action verbs
+- Highlight impact and results
+- Mention relevant skills or tools
+- Keep it clear and ATS-friendly
 """
 
 
-def ppt_template(user_input):
+def ppt_template(user_input, tone, length):
     return f"""
 Act as a presentation expert.
 
-Create a structured PPT outline based on:
+Create a structured PPT outline for:
 
-User Input:
+Topic:
 {user_input}
 
-Instructions:
-- Divide content into clear slides
-- Keep points concise and easy to understand
-- Include headings and bullet points
-- Ensure logical flow of content
+Tone:
+{tone}
 
-Output Format:
-- Slide-wise structure
+Length:
+{length}
+
+Goal:
+{refine_goal(user_input)}
+
+Guidelines:
+- Divide content into slides
+- Use short and clear bullet points
+- Maintain logical flow
+- Include headings and key points
 """
 
-def email_template(user_input):
+
+def email_template(user_input, tone, length):
     return f"""
 Act as a professional email writer.
 
-Write a clear and effective email based on:
+Write an email based on:
 
-User Input:
+Purpose:
 {user_input}
 
-Instructions:
-- Use a professional tone
-- Keep it concise and polite
-- Clearly state purpose
-- Include proper opening and closing
+Tone:
+{tone}
 
-Output Format:
-- Subject line
-- Email body
+Length:
+{length}
+
+Goal:
+{refine_goal(user_input)}
+
+Guidelines:
+- Start with a proper greeting
+- Clearly state purpose
+- Keep it polite and concise
+- End with a professional closing
 """
 
-def coding_template(user_input):
+
+
+def coding_template(user_input, tone, length):
     return f"""
 Act as a software engineer.
 
-Provide a clear and structured coding solution for:
+Provide a solution for:
 
-User Input:
+Problem:
 {user_input}
 
-Instructions:
-- Explain approach step-by-step
-- Provide clean and readable code
-- Add comments where necessary
-- Optimize for efficiency
+Tone:
+Clear and technical
 
-Output Format:
-- Explanation + Code
+Length:
+{length}
+
+Goal:
+{refine_goal(user_input)}
+
+Guidelines:
+- Explain approach step-by-step
+- Write clean and readable code
+- Add comments where needed
+- Focus on efficiency and clarity
 """
 
-def explanation_template(user_input):
+
+def explanation_template(user_input, tone, length):
     return f"""
 Act as an expert educator.
 
-Explain the following topic clearly:
+Explain the following topic:
 
-User Input:
+Topic:
 {user_input}
 
-Instructions:
+Tone:
+{tone}
+
+Length:
+{length}
+
+Goal:
+{refine_goal(user_input)}
+
+Guidelines:
 - Use simple language
 - Break down concepts step-by-step
-- Include examples if needed
+- Provide examples if needed
 - Keep it easy to understand
-
-Output Format:
-- Structured explanation
 """
 
-def webapp_template(user_input):
+def webapp_template(user_input, tone, length):
     return f"""
 Act as a full-stack developer.
 
-Design a complete web application based on the following requirement:
+Design a web application based on:
 
-User Input:
+Requirement:
 {user_input}
 
-Instructions:
-- Clearly define the problem and solution
-- Suggest frontend and backend technologies
-- Describe key features and functionalities
-- Outline system architecture (frontend, backend, database)
-- Include API structure if applicable
-- Suggest possible improvements or future enhancements
+Tone:
+{tone}
 
-Output Format:
-- Project overview
-- Features list
-- Tech stack
-- Architecture explanation
+Length:
+{length}
+
+Goal:
+{refine_goal(user_input)}
+
+Guidelines:
+- Define problem and solution
+- List key features
+- Suggest tech stack (frontend, backend, database)
+- Describe system architecture
+- Include possible improvements
 """
